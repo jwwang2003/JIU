@@ -15,8 +15,8 @@ class Login extends Component {
           <img alt="" src={logo}></img>
         </div>
         <div className="buttonContainer">
-          <div id="google-btn" className="button"><img alt="" src={googleIcon}></img>Login in with Google</div>
-          <div id="facebook-btn" className="button"><img alt="" src={facebookIcon}></img>Login in with Facebook</div>
+          <div id="google-btn" className="button" onClick={() => this.props.test(1)}><img alt="" src={googleIcon}></img>Login in with Google</div>
+          <div id="facebook-btn" className="button" onClick={() => this.props.test2()}><img alt="" src={facebookIcon}></img>Login in with Facebook</div>
           <div id="weixin-btn" className="button"><img alt="" src={weixinIcon}></img>Login in with Wechat</div>
         </div>
           <div className="bottom">
