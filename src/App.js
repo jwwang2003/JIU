@@ -40,7 +40,10 @@ const test2 = (t) => {
 function App() {
   return (
     <div className="App">
-      <Login lastUpdated={lastUpdated} test={(t) => test(t)}test2={(t) => test2(t)}></Login>
+      <Login
+        lastUpdated={lastUpdated}
+        test={(t)=>test(t)}
+        test2={(t)=>test2(t)}></Login>
     </div>
   );
 }
