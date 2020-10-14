@@ -8,15 +8,60 @@
   position: relative;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 200px auto 30px;
+  grid-template-rows: auto 30px;
   height: 100%;
+}
+
+.container-upper {
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-lower {
+  grid-row: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  background-color: black;
+  color: white;
+}
+
+.container-lower > .item {
+  padding-left: 5px;
+}
+
+.container-lower > .item:last-child {
+  padding-right: 5px;
+  font-size: 10px;
+  margin-left: auto;
+}
+
+.main {
+  box-sizing: border-box;
+  width: 300px;
+  height: 400px;
+  padding: 20px;
+  background: rgba(245,245,245);
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px -2px rgba(0,0,0, 0.25);
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 200px auto;
+}
+
+.main-busy {
+  opacity: 40%;
+  user-select: none;
+  pointer-events: none;
 }
 
 .logo {
   display: flex;
   justify-content: center;
-
-  padding: 20px;
+  padding-bottom: 20px;
 }
 
 .logo > img {
@@ -29,12 +74,11 @@
   justify-content: center;
   text-align: center;
 
-  padding: 10px;
 }
 
 .buttonContainer > .button {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
 
   user-select: none;
@@ -79,21 +123,3 @@
 #facebook-btn { background: var(--color-facebook) }
 #weixin-btn { background: var(--color-weixin) }
 
-.bottom {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  background-color: black;
-  color: white;
-}
-
-.bottom > .item {
-  padding-left: 5px;
-}
-
-.bottom > .item:last-child {
-  padding-right: 5px;
-  font-size: 10px;
-  margin-left: auto;
-}

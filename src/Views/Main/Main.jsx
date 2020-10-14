@@ -4,7 +4,7 @@ class Main extends Component {
   render() {
     return (
       <div>
-
+        This is the main
       </div>
     )
   }
