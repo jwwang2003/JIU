@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 
 class Main extends Component {
   render() {
+    const auth = this.props.auth;
+    const { uid, photoURL } = auth.currentUser;
     return (
       <div>
-        This is the main
+        <img src={photoURL}></img>
+        <button onClick={() => auth.signOut()}>Loggout</button>
       </div>
     )
   }
