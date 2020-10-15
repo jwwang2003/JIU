@@ -81,22 +81,12 @@ function App() {
               ></Login>
           </Route>
           <ProtectedRoute exact={true} path="/" isAuthenticated={user} component={()=>
-            <Hello class="YO" />}></ProtectedRoute>
+            <Main auth={auth} />}></ProtectedRoute>
         </Switch>
       </BrowserRouter>
       <ToastContainer hideProgressBar closeOnClick={false}/>
     </div>
   );
-}
-
-function Hello(props) {
-  return(
-    <div>
-      <button onClick={() => { auth.signOut(); toast.info(`Logged out!`, { position: toast.POSITION.TOP_CENTER })}}>Logout</button>
-    <h1>{props.class}</h1>
-    </div>
-    
-  )
 }
 
 export default App;
