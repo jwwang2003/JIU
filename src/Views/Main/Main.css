@@ -1,0 +1,14 @@
+.main-container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 70px auto;
+}
+
+.navbar {
+    grid-column: 1;
+    background: rgb(50,50,50);
+}
+
+.content {
+    grid-column: 2;
+}
