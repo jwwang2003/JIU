@@ -1,31 +1,48 @@
 import React, { Component } from 'react';
 import styles from './Navbar.module.css';
+import { Link } from 'react-router-dom';
 
 import Cube from '../3dCube/Cube';
+
+function worker(where) {
+  console.log(where);
+  for (let i = 0; i < 5; ++i) {
+    if (i === where) {
+      document.getElementById(`indi-${i}`).className = `${styles.indicator}`;
+      continue; 
+    }
+    document.getElementById(`indi-${i}`).className = ``;
+  }
+}
 
 class Navbar extends Component {
   render() {
     return (
       <div className={styles.container}>
-        <div className={styles.item}>
+        <Link to="/recents"className={styles.item} onClick={() => worker(0)}>
+          <div id='indi-0' className={`${styles.indicator}`}></div>
           <Cube />
-        </div>
-        <div className={styles.item}>
+        </Link>
+        <Link to="/chat"className={styles.item} onClick={() => worker(1)}>
+          <div id='indi-1'></div>
           <ChatIcon/>
           <div>聊天</div>
-        </div>
-        <div className={styles.item}>
+        </Link>
+        <Link to="/friends" className={styles.item} onClick={() => worker(2)}>
+          <div id='indi-2'></div>
           <ContactsIcon />
           <div>朋友</div>
-        </div>
-        <div className={`${styles.item} ${styles.pfp} `}>
-          <img src={this.props.photoURL}></img>
-        </div>
-        <div className={styles.item}>
+        </Link>
+        <Link to="/myself" className={`${styles.item} ${styles.pfp} `} onClick={() => worker(3)}>
+          <div id='indi-3'></div>
+          <img src={this.props.photoURL} alt=""></img>
+        </Link>
+        <Link to="/settings" className={styles.item} onClick={() => worker(4)}>
+          <div id='indi-4'></div>
           <SettingsIcon />
           <div>设置</div>
-        </div>
-        <div className={styles.item}>
+        </Link>
+        <div className={`${styles.item} ${styles.exit}`} onClick={() => this.props.handleSignOut()}>
           <ExitIcon />
           <div>登出</div>
         </div>
@@ -76,7 +93,7 @@ function ExitIcon() {
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="48px" height="48px">
     <path d="M0 0h24v24H0V0z" fill="none" />
     <path
-        d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" fill="currentColor" className={styles.primary}/>
+        d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
     </svg>
   )
 }

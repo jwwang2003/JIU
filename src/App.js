@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import { Route, BrowserRouter, Switch, Redirect } from 'react-router-dom';
 import ProtectedRoute from './Components/ProtectedRoute';
