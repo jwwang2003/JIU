@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/JIU/static/css/main.cbf23181.chunk.css",
+    "main.js": "/JIU/static/js/main.7d22608c.chunk.js",
+    "main.js.map": "/JIU/static/js/main.7d22608c.chunk.js.map",
+    "runtime-main.js": "/JIU/static/js/runtime-main.ac2313a8.js",
+    "runtime-main.js.map": "/JIU/static/js/runtime-main.ac2313a8.js.map",
+    "static/css/2.d34346ea.chunk.css": "/JIU/static/css/2.d34346ea.chunk.css",
+    "static/js/2.f500b7f5.chunk.js": "/JIU/static/js/2.f500b7f5.chunk.js",
+    "static/js/2.f500b7f5.chunk.js.map": "/JIU/static/js/2.f500b7f5.chunk.js.map",
+    "index.html": "/JIU/index.html",
+    "precache-manifest.c439c6fd40e33236da21050a72765387.js": "/JIU/precache-manifest.c439c6fd40e33236da21050a72765387.js",
+    "service-worker.js": "/JIU/service-worker.js",
+    "static/css/2.d34346ea.chunk.css.map": "/JIU/static/css/2.d34346ea.chunk.css.map",
+    "static/css/main.cbf23181.chunk.css.map": "/JIU/static/css/main.cbf23181.chunk.css.map",
+    "static/js/2.f500b7f5.chunk.js.LICENSE.txt": "/JIU/static/js/2.f500b7f5.chunk.js.LICENSE.txt",
+    "static/media/facebook.svg": "/JIU/static/media/facebook.08676566.svg",
+    "static/media/google.svg": "/JIU/static/media/google.bfd6437f.svg",
+    "static/media/logo.png": "/JIU/static/media/logo.8b055b73.png",
+    "static/media/weixin.png": "/JIU/static/media/weixin.1dfdc05a.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ac2313a8.js",
+    "static/css/2.d34346ea.chunk.css",
+    "static/js/2.f500b7f5.chunk.js",
+    "static/css/main.cbf23181.chunk.css",
+    "static/js/main.7d22608c.chunk.js"
+  ]
+}
