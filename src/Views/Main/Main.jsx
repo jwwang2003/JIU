@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import styles from './Main.module.css';
 import { Route, BrowserRouter, Switch, Redirect } from 'react-router-dom';
 
-import { Navbar } from '../../Components'
+import { Navbar, TopNavbar} from '../../Components'
+import { Recents, Chat, Friends, Myself, Settings} from '../../Components';
 
 class Main extends Component {
   render() {
@@ -13,11 +14,13 @@ class Main extends Component {
         <BrowserRouter>
           <div className={styles.navbar}>
             <Navbar
-            photoURL={photoURL}
             handleSignOut={() => auth.signOut()}/>
           </div>
           <Redirect to={{pathname: '/recents'}} />
           <div className={styles.content}>
+            <div className={styles.topNavbar}>
+              <TopNavbar photoURL={photoURL}/>
+            </div>
             <Switch>
               <Route path="/recents">
                 <Recents />
@@ -41,46 +44,5 @@ class Main extends Component {
     )
   }
 }
-
-function Recents() {
-  return (
-    <div>
-      This is recents
-    </div>
-  )
-}
-
-function Chat() {
-  return (
-    <div>
-      This is chat
-    </div>
-  )
-}
-
-function Friends() {
-  return (
-    <div>
-      This is friends
-    </div>
-  )
-}
-
-function Myself() {
-  return (
-    <div>
-      This is myself
-    </div>
-  )
-}
-
-function Settings() {
-  return (
-    <div>
-      This is settings
-    </div>
-  )
-}
-
 
 export default Main;

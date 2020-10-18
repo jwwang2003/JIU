@@ -12,7 +12,7 @@ import 'firebase/firestore';
 import 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const lastUpdated = "DEV";
@@ -37,32 +37,6 @@ window.loadPromise = new Promise(resolve => {
 
 window.loadPromise.then(() => console.log('DONE Loading DOM~'))
 
-const signInWithGoogle = () => {
-  document.getElementById('main').className = "main main-busy";
-  const provider = new firebase.auth.GoogleAuthProvider();
-  auth.signInWithPopup(provider).then(function() {
-    toast.success(`Authentication Success!`, {position: toast.POSITION.TOP_CENTER});
-    document.getElementById('main').className = "main";
-  }
-  ).catch(err => {
-    toast.warn(`Authentication Error! ${err}`, {position: toast.POSITION.TOP_CENTER});
-    document.getElementById('main').className = "main";
-  })
-}
-
-const signInWithFacebook = () => {
-  document.getElementById('main').className = "main main-busy";
-  const provider = new firebase.auth.FacebookAuthProvider();
-  auth.signInWithPopup(provider).then(function() {
-    toast.success(`Authentication Success!`, {position: toast.POSITION.TOP_CENTER});
-    document.getElementById('main').className = "main";
-  }
-  ).catch(err => {
-    toast.warn(`Authentication Error! ${err}`, {position: toast.POSITION.TOP_CENTER});
-    document.getElementById('main').className = "main";
-  })
-}
-
 function App() {
   const [user] = useAuthState(auth);
 
@@ -76,8 +50,7 @@ function App() {
           <Route path="/login">
             <Login
               lastUpdated={lastUpdated}
-              signInWithGoogle={() => signInWithGoogle()}
-              signInWithFacebook={() => signInWithFacebook()}
+              fire={firebase}
               ></Login>
           </Route>
           <ProtectedRoute exact={true} path="/" isAuthenticated={user} component={()=>
