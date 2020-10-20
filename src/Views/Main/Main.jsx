@@ -6,9 +6,11 @@ import { Navbar, TopNavbar} from '../../Components'
 import { Recents, Chat, Friends, Myself, Settings} from '../../Components';
 
 class Main extends Component {
+
   render() {
     const auth = this.props.auth;
     const { /*uid, */ photoURL } = auth.currentUser;
+    
     return (
       <div className={styles.main_container}>
         <BrowserRouter>
@@ -21,23 +23,25 @@ class Main extends Component {
             <div className={styles.topNavbar}>
               <TopNavbar photoURL={photoURL}/>
             </div>
-            <Switch>
-              <Route path="/recents">
-                <Recents />
-              </Route>
-              <Route path="/chat">
-                <Chat />
-              </Route>
-              <Route path="/friends">
-                <Friends />
-              </Route>
-              <Route path="/myself">
-                <Myself />
-              </Route>
-              <Route path="/settings">
-                <Settings />
-              </Route>
-            </Switch>
+            <div className={styles._content}>
+              <Switch>
+                <Route path="/recents">
+                  <Recents IMG={photoURL}/>
+                </Route>
+                <Route path="/chat">
+                  <Chat />
+                </Route>
+                <Route path="/friends">
+                  <Friends />
+                </Route>
+                <Route path="/myself">
+                  <Myself />
+                </Route>
+                <Route path="/settings">
+                  <Settings />
+                </Route>
+              </Switch>
+            </div>
           </div>
         </BrowserRouter>
       </div>

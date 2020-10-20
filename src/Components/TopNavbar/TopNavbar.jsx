@@ -10,7 +10,7 @@ class TopNavbar extends Component {
         </div>
         
         <div className={styles.profilePic}>
-          <img src={this.props.photoURL}></img>
+          <img src={this.props.photoURL} alt=""></img>
         </div>
       </div>
     )

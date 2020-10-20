@@ -18,30 +18,49 @@ import 'react-toastify/dist/ReactToastify.css';
 const lastUpdated = "DEV";
 
 var firebaseConfig = {
-  apiKey: "AIzaSyDdsJkMYTP3zzBeFqbHYJ5Mv3ueKVftUy4",
-  authDomain: "jiu-26817.firebaseapp.com",
-  databaseURL: "https://jiu-26817.firebaseio.com",
-  projectId: "jiu-26817",
-  storageBucket: "jiu-26817.appspot.com",
-  messagingSenderId: "664761226470",
-  appId: "1:664761226470:web:4fdf9480abf6dacd4f5727",
-  measurementId: "G-98J5Z7JTS1"
+  apiKey: "AIzaSyD1_91Hn-8_BMIdkv75zkGCT0VtFYe5xFQ",
+  authDomain: "jiuijiujiu.firebaseapp.com",
+  databaseURL: "https://jiuijiujiu.firebaseio.com",
+  projectId: "jiuijiujiu",
+  storageBucket: "jiuijiujiu.appspot.com",
+  messagingSenderId: "319949768473",
+  appId: "1:319949768473:web:51af58b3975e56718b6788",
+  measurementId: "G-K8VLV0RR4D"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 
 window.loadPromise = new Promise(resolve => {
+  console.time('loadDOM')
   window.addEventListener(`DOMContentLoaded`, resolve)
 })
+window.loadPromise.then(() => { 
+  console.log('%cDone Loading DOM~', 'color: limegreen')
+  console.timeEnd('loadDOM');
+})
 
-window.loadPromise.then(() => console.log('DONE Loading DOM~'))
+let coldStart = true;
+
+console.time('checkAuth');
+firebase.auth().onAuthStateChanged(function(user) {
+  if (coldStart) {
+    if (user) {
+      console.log('%cPersisted user found', 'color: limegreen; font-weight: bold')
+    } else {
+      console.log('%cPersisted user not found', 'color: red; font-weight: bold');
+    }
+    document.getElementById("App").className = "App"
+    console.log('%cCheck auth timer','color: orange' )
+    console.timeEnd('checkAuth');
+  }
+  coldStart = false;
+});
 
 function App() {
   const [user] = useAuthState(auth);
-
   return (
-    <div className="App">
+    <div id="App" className="App Hide">
       <BrowserRouter>
         {user ?
         <Redirect to={{ pathname: '/' }} /> :

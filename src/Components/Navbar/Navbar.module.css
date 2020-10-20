@@ -11,6 +11,11 @@
     height: 100%;
     position: relative;
 }
+@media (max-width: 575.9px) {
+    .container {
+        flex-direction: row;
+    }
+}
 
 .item {
     cursor: pointer;

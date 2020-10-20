@@ -1,0 +1,137 @@
+.container {
+  border-radius: 5px;
+  display: grid;
+  grid-template-rows: 40px auto;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.container > .topBar {
+  grid-row: 1;
+  box-sizing: border-box;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  background: white;
+}
+
+.topBar img {
+  width: auto;
+  height: 100%;
+}
+
+.topBar svg {
+  width: auto;
+  height: 100%;
+  background: rgb(230,230,230);
+}
+
+.item {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-left: auto;
+  margin-right: 5px;
+  font-size: 12.5px;
+}
+
+.content {
+  grid-row: 2;
+  background: rgba(255,255,255,0.9);
+  display: grid;
+  grid-template-columns: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.left {
+  grid-column: 1;
+  overflow-y: scroll;
+}
+
+.right {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 33.333% 33.333% 33.333%;
+}
+
+.right > img {
+  width: 100%;
+  height: auto;
+}
+
+.nope {
+  grid-template-columns: 50% 50%;
+}
+
+.test {
+  grid-template-columns: 100%;
+}
+
+.test2 {
+  grid-template-columns: 50% 50%;
+}
+
+.test3 {
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+}
+
+.test4 {
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-template-rows: 33.33% 33.33% 33.33%;
+}
+
+@media (max-width: 575.9px) {
+  .container {
+    width: 300px;
+    max-height: 440px;
+  }
+  .content {
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+  }
+  .left {
+    grid-column: 1;
+    grid-row: 1;
+    max-height: 100px;
+  }
+  .right {
+    grid-column: 1;
+    grid-row: 2;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .container {
+    width: 500px;
+    
+  }
+  .content {
+    max-height: 250px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    width: 600px;
+  }
+  .content {
+    max-height: 300px;
+  }
+}
+
+
+@media (min-width: 992px) {
+  .container {
+    width: 700px;
+    max-height: calc(700/2px);
+  }
+  .content {
+    max-height: 350px;
+  }
+}
+
+
+@media (min-width: 1200px) {}

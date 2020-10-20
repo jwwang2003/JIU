@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import Cube from '../3dCube/Cube';
 
 function worker(where) {
-  console.log(where);
   for (let i = 0; i < 5; ++i) {
     if (i === where) {
       document.getElementById(`indi-${i}`).className = `${styles.indicator}`;
