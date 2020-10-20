@@ -26,7 +26,7 @@
   background: rgb(230,230,230);
 }
 
-.item {
+.timestamp {
   display: flex;
   flex-direction: column-reverse;
   margin-left: auto;
@@ -36,7 +36,6 @@
 
 .content {
   grid-row: 2;
-  background: rgba(255,255,255,0.9);
   display: grid;
   grid-template-columns: 100%;
   width: 100%;
@@ -44,17 +43,18 @@
 }
 
 .left {
+  background-color: rgba(255,255,255,0.9);
   grid-column: 1;
   overflow-y: scroll;
 }
 
-.right {
+.media {
   grid-column: 2;
   display: grid;
   grid-template-columns: 33.333% 33.333% 33.333%;
 }
 
-.right > img {
+.media > img {
   width: 100%;
   height: auto;
 }
@@ -95,7 +95,7 @@
     grid-row: 1;
     max-height: 100px;
   }
-  .right {
+  .media {
     grid-column: 1;
     grid-row: 2;
     height: 100%;
@@ -126,7 +126,6 @@
 @media (min-width: 992px) {
   .container {
     width: 700px;
-    max-height: calc(700/2px);
   }
   .content {
     max-height: 350px;

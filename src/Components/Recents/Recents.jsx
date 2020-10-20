@@ -13,28 +13,24 @@ import p9 from './p9.jpeg';
 
 import Post from '../Post/Post';
 
-class Recents extends Component {
-  render() {
-    const arr = [];
+function Recents(props) {
+    const arr = [p1, p2, p3, p4, p5, p6, p7];
     return (
       <div className={styles.container}>
         <Post
-          IMG={this.props.IMG}
-          postedAt={"2020.20"}
-          arr={arr}
-          num={arr.length}/>
-        <Post IMG={this.props.IMG}/>
-        <Post IMG={this.props.IMG}/>
-        <Post IMG={this.props.IMG}/>
-        <Post IMG={this.props.IMG}/>
-        <Post IMG={this.props.IMG}/>
-        <Post IMG={this.props.IMG}/>
-        <Post IMG={this.props.IMG}/>
-        <Post IMG={this.props.IMG}/>
-        <Post IMG={this.props.IMG}/>
+          profile={props.IMG}
+          timestamp={"2020.20"}
+          media={arr}
+          mediaSize={arr.length}
+          text={<><h1>Jimmy </h1></>}/>
+        <Post
+          profile={""}
+          timestamp={"2020.21"}
+          media={[p8, p9]}
+          mediaSize={3}
+          text={<><h1>Jimmy </h1></>}/>
       </div>
     )
-  }
 }
 
 export default Recents;
