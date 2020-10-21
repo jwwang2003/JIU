@@ -6,11 +6,21 @@ class Post extends Component {
   constructor() {
     super();
   }
+
   componentDidMount() {
     // Initial setup
     const mediaSize = this.props.mediaSize;
-    init(mediaSize);
+    this.init(mediaSize);
   }
+
+  init(num) {
+    document.getElementById(`content-${this.props.id}`).className = `${styles.content} ${styles.nope}`
+    if (num === 1) document.getElementById(`media-${this.props.id}`).className = `${styles.media} ${styles.test}`
+    else if (num === 2) document.getElementById(`media-${this.props.id}`).className = `${styles.media} ${styles.test2}`
+    else if (num === 3 || num === 4) document.getElementById(`media-${this.props.id}`).className = `${styles.media} ${styles.test3}`
+    else if (num < 4) document.getElementById(`media-${this.props.id}`).className = `${styles.media} ${styles.test4}`
+  }
+
   render() {
     return (
       <div className={styles.container}>
@@ -19,11 +29,11 @@ class Post extends Component {
           <div className={styles.timestamp}>{this.props.timestamp}</div>
           <Expand />
         </div>
-        <div id="content" className={styles.content}>
+        <div id={`content-${this.props.id}`} className={styles.content}>
           <div className={styles.left}>
             {this.props.text}
           </div>
-          <div id="media" className={styles.media}>
+          <div id={`media-${this.props.id}`} className={styles.media}>
             {this.props.media && this.props.media.map((media) => <Image src={media} />)}
           </div>
         </div>
@@ -32,26 +42,10 @@ class Post extends Component {
   }
 }
 
-function init(num) {
-  console.log(num);
-  document.getElementById('content').className = `${styles.content} ${styles.nope}`
-  if (num === 1) {
-    document.getElementById('media').className = `${styles.right} ${styles.test}`
-  }
-  else if (num === 2) {
-    document.getElementById('media').className = `${styles.right} ${styles.test2}`
-  }
-  else if (num === 3 || num === 4) {
-    document.getElementById('media').className = `${styles.right} ${styles.test3}`
-  }
-  else if (num < 4) {
-    document.getElementById('media').className = `${styles.right} ${styles.test4}`
-  }
-}
-
 function Image(props) {
   return (
     <img src={props.src} alt=""></img>
+    
   )
 }
 

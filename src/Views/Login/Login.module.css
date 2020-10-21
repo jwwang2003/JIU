@@ -1,5 +1,5 @@
 :root {
-  --color-google: #4285F4;
+  --color-google: rgb(250, 250, 250);
   --color-facebook: #3B5998;
   --color-weixin:  #2BA245;
 }
@@ -10,6 +10,8 @@
   grid-template-columns: 100%;
   grid-template-rows: auto 30px;
   height: 100%;
+  overflow-y: scroll;
+  background: rgb(50,50,50);
 }
 
 .container_upper {
@@ -17,6 +19,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .container_lower {
@@ -30,7 +34,16 @@
 }
 
 .container_lower > .item {
-  padding-left: 5px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  height: 100%;
+}
+
+.container_lower > .item svg {
+  height: inherit;
+  width: auto;
 }
 
 .container_lower > .item:last-child {
@@ -39,17 +52,28 @@
   margin-left: auto;
 }
 
+.language {
+  user-select: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.language:hover {
+  background: rgb(255, 255, 255);
+  color: black;
+}
+
 .main {
   box-sizing: border-box;
-  width: 300px;
-  height: 400px;
+  min-width: 320px;
+  width: 50%;
+  max-width: 450px;
   padding: 20px;
-  background: rgba(245,245,245);
+  background: rgb(255,255,255);
   border-radius: 5px;
   box-shadow: 5px 5px 10px -2px rgba(0,0,0, 0.25);
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 200px auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .main_busy {
@@ -58,67 +82,117 @@
   pointer-events: none;
 }
 
-.logo {
+.buttons {
+  
   display: flex;
-  justify-content: center;
-  padding-bottom: 20px;
-}
-
-.logo > img {
-  height: 100%;
-}
-
-.buttonContainer {
-  display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   text-align: center;
-
+  margin-bottom: 20px;
 }
 
-.buttonContainer > .button {
+.buttons > .button {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0;
+  margin-right: 7.5px;
+}
+
+.button {
   font-size: 18px;
   text-align: center;
 
   user-select: none;
   cursor: pointer;
-
-  display: grid;
-  grid-template-columns: 30px auto;
+ 
   align-items: center;
   height: 30px;
 
-  margin-bottom: 7.5px;
+  margin-bottom: 10px;
   padding: 10px;
   
   color: white;
   outline: none;
   border: none;
-  
+  background: rgb(20,20,20);
+
   box-shadow: 4px 4px 5px -2px rgba(0,0,0, 0.5);
-  border-radius: 4px;
+  border-radius: 20px;
   outline-offset: -2px;
   transition: 0.2s ease;
 }
-.buttonContainer > .button:hover {
+
+.button:hover {
   transform: translateY(-2px);
   box-shadow: none;
 }
 
-.buttonContainer > .button:hover img {
+.button:hover img {
   transform: translateY(-5px);
 }
 
-.buttonContainer > .button > img {
+.button > img {
   height: 100%;
   transition: 0.2s ease;
+  margin-right: 2px;
 }
 
-.buttonContainer > .button:last-child {
+.button:last-child {
+  margin-right: 0;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+input {
+  height: 35px;
+  background: rgba(245, 245, 245, 1);
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  border-bottom: 2px solid black;
+  transition: 0.2s ease;
+  margin-bottom: 15px;
+}
+
+input:last-child {
   margin-bottom: 0;
 }
 
-.google_btn { background: var(--color-google) }
+input:focus {
+  background: rgba(255,255,255,0);
+}
+
+.minorText{
+  text-align: end;
+  font-size: 12px;
+  
+  cursor: pointer;
+}
+
+.minorText a {
+  text-decoration: none;
+  color: black;
+}
+
+.minorText2{
+  text-align: start;
+  font-size: 12px;
+  color: black;
+  cursor: pointer;
+  margin-bottom: 10px;
+  
+}
+
+.minorText2 a {
+  text-decoration: none; 
+  color: black;
+}
+
+.google_btn { background: var(--color-google); color: black }
 .facebook_btn { background: var(--color-facebook) }
 .weixin_btn { background: var(--color-weixin) }
 

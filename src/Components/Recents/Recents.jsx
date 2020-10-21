@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styles from './Recents.module.css';
 
 import p1 from './p1.jpeg';
@@ -15,20 +15,23 @@ import Post from '../Post/Post';
 
 function Recents(props) {
     const arr = [p1, p2, p3, p4, p5, p6, p7];
+    const arr1 = [p1,p2, p8, p9];
     return (
       <div className={styles.container}>
         <Post
+          id={"1"}
           profile={props.IMG}
           timestamp={"2020.20"}
           media={arr}
           mediaSize={arr.length}
           text={<><h1>Jimmy </h1></>}/>
         <Post
-          profile={""}
-          timestamp={"2020.21"}
-          media={[p8, p9]}
-          mediaSize={3}
-          text={<><h1>Jimmy </h1></>}/>
+          id={"2"}
+          profile={props.IMG}
+          timestamp={"2020.20"}
+          media={arr1}
+          mediaSize={arr1.length}
+          text={<><h1>Jimmy </h1><h1>Jimmy </h1><h1>Jimmy </h1><h1>Jimmy </h1><h1>Jimmy </h1></>}/>
       </div>
     )
 }

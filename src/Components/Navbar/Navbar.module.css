@@ -6,7 +6,9 @@
 .container {
     display: flex;
     flex-direction: column;
-    
+    position: fixed;
+    will-change: transform;
+    transform: translateZ(0);
     align-items: center;
     height: 100%;
     position: relative;
